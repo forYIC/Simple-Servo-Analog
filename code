@@ -1,0 +1,28 @@
+#include <Servo.h>
+
+Servo m;
+int aval;
+const int n = A4;
+
+
+void setup(){
+Serial.begin(9600);
+m.attach(6);
+}
+
+void loop(){
+aval = analogRead(n);
+Serial.println(aval);
+
+if(aval<500){
+ m.write(0);
+ }else{
+  m.write(180);
+ }delay(100);
+}
+
+
+
+
+
+
